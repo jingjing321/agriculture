@@ -1,0 +1,153 @@
+div,form,input,textarea,p,ul,li,dl,dt,dd,h1,table,h2 {
+	padding:0;
+	margin:0;
+}
+li {
+	list-style-type:none;
+}
+ol,ul {
+	list-style:none;
+}
+
+.left {
+	float:left;
+}
+.right {
+	float:right;
+}
+
+ul, li {
+	list-style: none;
+}
+hr {
+	height: 0;
+	border-left: none;
+	border-right: 0;
+	border-top: 1px dashed #2d2f34;
+	border-bottom: 1px dashed #474954;
+}
+
+.timeLine .main {
+	background: url("../img/log/line-bg.png") repeat-y 17px 0;
+}
+.timeLine .main .title {
+	line-height: 40px;
+	font-size: .9rem;
+	background: url("../img/log/clock.png") no-repeat 8px top;
+}
+.timeLine .main .title a{
+	color:#0894ec;
+}
+.timeLine .main .year {
+	position: relative;
+	z-index: 100;
+	top: 10px;
+}
+.timeLine .main .year .list{
+	margin:10px 0;
+	position:relative;
+	overflow:hidden;
+	-webkit-transition:height 1s cubic-bezier(0.025,0.025,0.000,1.115),opacity 1s;
+	-moz-transition:height 1s cubic-bezier(0.025,0.025,0.000,1.115),opacity 1s;
+	-ms-transition:height 1s cubic-bezier(0.025,0.025,0.000,1.115),opacity 1s;
+	-o-transition:height 1s cubic-bezier(0.025,0.025,0.000,1.115),opacity 1s;
+	transition:height 1s cubic-bezier(0.025,0.025,0.000,1.115),opacity 1s
+}
+.timeLine .main .year .list ul {
+	bottom: 0;
+}
+.timeLine .main .year .list ul li {
+	background: url("../img/log/circle.png") no-repeat 2px 31px;
+	padding: 30px 0 0 0;
+	color: #a1a4b8;
+}
+.timeLine .main .year .list ul li.highlight {
+	background-image: url(../img/log/circle.png);
+}
+.cls {
+	zoom: 1;
+}
+.cls:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.timeLine .main .year .list ul li.highlight .date, .timeLine .main .year .list ul li.highlight .intro {
+	color: #ec6a13;
+}
+.timeLine .main .year .list ul li .date,.timeLine .main .year .list ul li .version{
+	display:block;
+	margin-left: 41px;
+}
+.timeLine .main .year .list ul li .date{
+	font-size:.8rem;
+	line-height:1rem;
+	color:#6a6b72;
+}
+.timeLine .main .year .list ul li .intro, .timeLine .main .year .list ul li .more {
+	display: block;
+	margin-left: 41px;
+}
+.timeLine .main .year .list ul li .intro {
+	font-size: .8rem;
+	line-height: 1.2rem;
+	color: #6a6b72;
+}
+.timeLine .wrapper:first-child .main .year.close h2 i{
+	transform:rotate(-90deg);
+	-webkit-transform:rotate(-90deg);
+	-moz-transform:rotate(-90deg);
+	-ms-transform:rotate(-90deg);
+	-o-transform:rotate(-90deg)
+}
+.timeLine .wrapper:first-child .main .year.close .list{
+	opacity:0;
+	height:0!important;
+}
+.ie7 .timeLine .main .year h2 i{
+	left:40px
+}
+.more{
+	font-size: 0.75rem;
+	margin-top: .2rem;
+}
+.list-block .item-text{
+	display: block;
+    height: auto;
+}
+.panel{
+	background-color: #2c3e50;
+}
+.panel ul{
+	background-color: #253443;
+	border:0px;
+}
+.panel .list-block .item-link.list-button{
+	color: white;
+	border:0px;
+}
+.panel .list-block .item-link.active-state, html:not(.watch-active-state) .list-block .item-link:active{
+	background-color: #253443;
+}
+.content-block{
+	margin: 0.75rem 0;
+}
+.list-block .item-text{
+	line-height: 1.25rem;
+}
+.bar .pull-right{
+	position: relative;
+    z-index: 20;
+    padding: .5rem .1rem;
+}
+.white_back{
+	background-color: white;
+}
+.white_back table{
+	font-size: .65rem
+}
+.content-block {
+    padding: 0 .35rem;
+}

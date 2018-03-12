@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>农业安全生产溯源管理</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- <link rel="shortcut icon" href="/favicon.ico"> -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="css/light7.min.css">
+    <link rel="stylesheet" href="css/light7-swiper.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-table.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+  <body onload='pageload()'>
+	    <div class="page page-current" id="index">
+        <header class="bar bar-nav">
+          <a class="icon icon-menu pull-left open-panel"></a>
+          <h1 class="title">农业安全生产溯源管理</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="content-block">
+            <div class="searchbar row">
+              <div class="search-input col-66">
+                <input type="search" id='search' placeholder='请输入追溯号'/>
+              </div>
+              <div class="col-30">
+                <p class="buttons-row">
+                  <a href="#" class="button active"><span class="fa fa-search"></span></a>
+                  <a href="#" class="button active open-popup" data-popup=".popup-services"><span class="fa fa-qrcode"></span></a>
+                </p>
+              </div>
+            </div>
+            <p style="font-size: .6rem;color: #c0c0c1;">比如输入<a>茯茶</a>的追溯号，会出现如下茯茶的追溯信息，如下文。</p>
+            <div class="timeLine">
+              <div class="main">
+                <h3 class="title"><a>茯茶</a> - 追溯信息</h3>
+                <div class="year">
+                  <div class="list">
+                    <ul>
+                      <li class="cls">
+                        <p class="date">3月26日</p>
+                        <p class="intro">微俱聚硬件微美图正式推出</p>
+                        <div class="more">
+                          <p>首创微信集商务</p>
+                        </div>
+                      </li>
+                      <li class="cls">
+                        <p class="date">3月19日</p>
+                        <p class="intro">全新会员卡！</p>
+                        <div class="more">
+                          <p>会员卡手机端会员卡页面全部改版，给用户更时尚大方的体验</p>
+                        </div>
+                      </li>
+                      <li class="cls">
+                        <p class="date">3月12日</p>
+                        <p class="intro">首家支持微信支付，多客服系统上线！</p>
+                        <div class="more">
+                          <p>为公众账号的微信支付提供技术接入，通过简单配置即可使用微信支付</p>
+                        </div>
+                      </li>
+                      <li class="cls">
+                        <p class="date">3月5日</p>
+                        <p class="intro">360全景隆重上线！</p>
+                        <div class="more">
+                          <p>全新360全景模块上线，3D看房、3D看车、3D看实景，一网打尽</p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="item_list">
+        <header class="bar bar-nav">
+          <a class="icon icon-menu pull-left open-panel"></a>
+          <a class="pull-right open-popover" data-popover=".popover-item-list">操作</a>
+          <!-- <a class="pull-right open-popover" data-popover=".popover-item-list">操作</a> -->
+          <h1 class="title">项目列表</h1>
+          
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="content-block">
+            <div class="searchbar row">
+              <div class="search-input col-66">
+                <input type="search" id='search' placeholder='请输入项目名称'/>
+              </div>
+              <div class="col-30">
+                <p class="buttons-row">
+                  <a href="#" class="button active"><span class="fa fa-search"></span></a>
+                  <a href="#" class="button active"><span class="fa fa-qrcode"></span></a>
+                </p>
+              </div>
+            </div>
+            <div class="list-block media-list">
+              <ul>
+                <li>
+                  <label class="label-checkbox item-content">
+                    <input type="checkbox" name="my-radio">
+                    <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">项目名称</div>
+                      </div>
+                      <div class="item-text">
+                          <p>追溯号：待生成</p>
+                          <p>开始日期：2018-02-28</p>
+                          <p>作物名称：上海青</p>
+                          <p>耕地面积（亩）：20</p>
+                          <p>设施栽培面积（亩）：18</p>
+                          <p>露天栽培面积（亩）：0</p>
+                      </div>
+                    </div>
+                  </label>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="operation_process">
+        <header class="bar bar-nav">
+          <a class="icon icon-menu pull-left open-panel"></a>
+          <a class="pull-right">新建分类</a>
+          <h1 class="title">操作过程</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="content-block">
+            <div class="searchbar row">
+              <div class="search-input col-66">
+                <input type="search" id='search' placeholder='请输入项目名称'/>
+              </div>
+              <div class="col-30">
+                <p class="buttons-row">
+                  <a href="#" class="button active"><span class="fa fa-search"></span></a>
+                </p>
+              </div>
+            </div>
+            <!-- <div class="list-block media-list">
+              <ul>
+                <li>
+                  <a href="#" class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">栽培</div>
+                      </div>
+                      <div class="item-text">编号：1 <br/>
+                        排序：1<br/>
+                        创建时间：2018-01-08<br/>
+                        默认：false<br/>
+                        有效：true<br/>
+                        备注：<br/>
+                      </div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+            <div class="white_back">
+              <table id="operation_process_table"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="operation_field">
+        <header class="bar bar-nav">
+          <a class="icon icon-menu pull-left open-panel"></a>
+          <a class="pull-right open-popover" data-popover=".popover_operation_field">操作</a>
+          <h1 class="title">操作字段</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="buttons-tab">
+            <a href="#tab1" class="tab-link active button">栽培</a>
+            <a href="#tab2" class="tab-link button">施肥</a>
+            <a href="#tab3" class="tab-link button">植保</a>
+            <a href="#tab4" class="tab-link button">采收</a>
+          </div>
+          <div class="content-block">
+            <div class="searchbar row">
+              <div class="search-input col-66">
+                <input type="search" id='search' placeholder='名字/编号'/>
+              </div>
+              <div class="col-30">
+                <p class="buttons-row">
+                  <a href="#" class="button active"><span class="fa fa-search"></span></a>
+                </p>
+              </div>
+            </div>
+             <!-- <div class="list-block media-list">
+              <ul>
+                <li>
+                  <a href="#" class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title-row">
+                        <div class="item-title">栽培</div>
+                      </div>
+                      <div class="item-text">编号：1<br/>
+                       排序：1<br/>
+                       创建时间：2018-01-08<br/>
+                       默认：false<br/>
+                       有效：true<br/>
+                       备注：</div>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div> -->
+            <div class="white_back">
+              <table id="operation_field_table"></table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="create_item_list">
+        <header class="bar bar-nav">
+          <a class="icon icon-left pull-left back"></a>
+          <!-- <a class="pull-right open-popover" data-popover=".popover-item-list">操作</a> -->
+          <h1 class="title">新建项目</h1>
+          
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="list-block">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">项目名称</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="项目名称">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">开始时间</div>
+                    <div class="item-input">
+                      <input type="text" id="my-input" data-toggle='date' />
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">作物名称</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="作物名称">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">作物类型</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="作物类型">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">耕地面积(亩)</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="耕地面积">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">设施栽培面积(亩)</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="设施栽培面积（亩）">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">露天栽培面积(亩)</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="露天栽培面积（亩）">
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="content-block">
+            <div class="row">
+              <div class="col-100"><a href="#" class="button button-big button-fill button-success">提交</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page" id="create_operation_field">
+        <header class="bar bar-nav">
+          <a class="icon icon-left pull-left back"></a>
+          <!-- <a class="pull-right open-popover" data-popover=".popover-item-list">操作</a> -->
+          <h1 class="title">栽培>新增字段</h1>
+          
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+          <div class="list-block">
+            <ul>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">字段名称</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="字段名称">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">字段类型</div>
+                    <div class="item-input">
+                      <select>
+                        <option>文本框</option>
+                        <option>时间格式</option>
+                        <option>图片</option>
+                        <option>数字型</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">排序</div>
+                    <div class="item-input">
+                      <input type="text" placeholder="排序">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">是否有效</div>
+                    <div class="item-input">
+                      <input type="radio" name="my-radio">
+                      <div class="item-media"><i class="icon icon-form-checkbox"></i>有效</div>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="item-content">
+                  <div class="item-inner">
+                    <div class="item-title label">备注</div>
+                    <div class="item-input">
+                      <input type="textarea" placeholder="备注">
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- popup, panel 等放在这里 -->
+      <div class="panel-overlay"></div>
+      <!-- Left Panel with Reveal effect -->
+      <div class="panel panel-left panel-reveal" id="panel-left">
+        <div class="list-block">
+          <ul>
+            <li><a href="#index" class="item-link list-button">溯源查询</a></li>
+            <li><a href="#item_list" class="item-link list-button">项目列表</a></li>
+            <li><a href="#operation_process" class="item-link list-button">操作过程</a></li>
+            <li><a href="#operation_field" class="item-link list-button">操作字段</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Services Popup -->
+      <div class="popup popup-services">
+        <div class="content-block">
+          <p><a href="#" class="close-popup">关闭</a></p>
+          <div id="support"></div>  
+          <div id="contentHolder" style="text-align: center">         
+            <video id="video" width="320" height="320" autoplay>  
+            </video>         
+            <canvas style="display:none; background-color:#F00;" id="canvas" width="320" height="320">  
+            </canvas> <br/>  
+            
+            <p><a href="#" id="snap" class="button" style="display:none;">开始扫描</a></p>    
+          </div> 
+        </div>
+      </div>
+
+      <div class="popover popover-item-list">
+        <!-- Popover's angle arrow -->
+        <div class="popover-angle"></div>
+
+        <!-- Popover content -->
+        <div class="popover-inner">
+          <div class="list-block">
+            <ul>
+              <li><a href="#create_item_list" class="list-button item-link close-popover">新建项目</a></li>
+              <li><a href="#create_item_list" class="list-button item-link close-popover">编辑项目</a></li>
+              <li><a href="#" class="list-button item-link">删除项目</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="popover popover_operation_field">
+        <!-- Popover's angle arrow -->
+        <div class="popover-angle"></div>
+
+        <!-- Popover content -->
+        <div class="popover-inner">
+          <div class="list-block">
+            <ul>
+              <li><a href="#" class="list-button item-link">新建字段</a></li>
+              <li><a href="#" class="list-button item-link">分类管理</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <script type='text/javascript' src='js/jquery-3.1.1.min.js' charset='utf-8'></script>
+      <script type="text/javascript" src='js/bootstrap-table.min.js'></script>
+      <script type='text/javascript' src='js/light7.min.js' charset='utf-8'></script>
+      <script type='text/javascript' src='js/light7-swiper.min.js' charset='utf-8'></script>
+      <script type="text/javascript" src="js/qrcode/grid.js"></script>
+      <script type="text/javascript" src="js/qrcode/version.js"></script>
+      <script type="text/javascript" src="js/qrcode/detector.js"></script>
+      <script type="text/javascript" src="js/qrcode/formatinf.js"></script>
+      <script type="text/javascript" src="js/qrcode/errorlevel.js"></script>
+      <script type="text/javascript" src="js/qrcode/bitmat.js"></script>
+      <script type="text/javascript" src="js/qrcode/datablock.js"></script>
+      <script type="text/javascript" src="js/qrcode/bmparser.js"></script>
+      <script type="text/javascript" src="js/qrcode/datamask.js"></script>
+      <script type="text/javascript" src="js/qrcode/rsdecoder.js"></script>
+      <script type="text/javascript" src="js/qrcode/gf256poly.js"></script>
+      <script type="text/javascript" src="js/qrcode/gf256.js"></script>
+      <script type="text/javascript" src="js/qrcode/decoder.js"></script>
+      <script type="text/javascript" src="js/qrcode/qrcode.js"></script>
+      <script type="text/javascript" src="js/qrcode/findpat.js"></script>
+      <script type="text/javascript" src="js/qrcode/alignpat.js"></script>
+      <script type="text/javascript" src="js/qrcode/databr.js"></script>
+      <script src="js/main.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+  </body>
+</html>
