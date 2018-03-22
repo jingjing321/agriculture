@@ -82,10 +82,6 @@ function searchIndex(number){
                                                 if(data.Response[i_detail].F_Type=="P"){
                                                     var eleHtml='<p><span>'+data.Response[i_detail].F_Name+'：</span><a data-picUrl="'+data.Response[i_detail].F_Value+'" onclick="viewImg(this)">查看附件</a>'
                                                 }
-                                                else if(data.Response[i_detail].F_Type=="B"){
-                                                    var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value+'</p>';
-                                                    eleHtml+='<p>&nbsp;（商品名称：复合肥料，品牌：六国之星，厂家：六国之星厂）</p>';
-                                                }
                                                 else{
                                                     var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value+'</p>';
                                                 }
@@ -103,6 +99,8 @@ function searchIndex(number){
                         
                     }
                 })
+				$("#index .content").height();
+                // alert("content height:"+$("#index .content").height()+" ,timeLine Height:"+$("#index .content .timeLine").height()+" ,ul height:"+$("#index .content .timeLine ul").height());
             }
             else{
                 ele.find("h3").html("追溯信息")
@@ -128,51 +126,6 @@ function viewImg(thiz){
         photos:pic
     })
     picList.open();
-}
-
-/*
-*获取项目列表
-*/
-function getProgramList(){
-    var ele=$("#item_list .content .list-block ul");
-    ele.html("");
-    $.ajax({
-        type: "get",
-        url: baseUrl+'api/Origin/GetProgramList',
-        dataType: 'json',
-        success:function(data){
-            if(data.Response.length>0){
-                for(var i=0;i<data.Response.length;i++){
-                    ele.append('<li>'+
-                                  '<label class="label-checkbox item-content">'+
-                                    '<input type="checkbox" name="my-radio">'+
-                                    '<div class="item-media" style="display: none;"><i class="icon icon-form-checkbox"></i></div>'+
-                                    '<div class="item-inner">'+
-                                      '<div class="item-title-row">'+
-                                        '<div class="item-title">'+data.Response[i].F_Name+'</div>'+
-                                      '</div>'+
-                                      '<div class="item-text">'+
-                                          '<p>追溯号：'+data.Response[i].F_FindNumber+'</p>'+
-                                          '<p>开始日期：'+data.Response[i].F_StartTime+'</p>'+
-                                          '<p>作物名称：'+data.Response[i].F_ProductName+'</p>'+
-                                          '<p>耕地面积（亩）：'+data.Response[i].F_CultivatedLandArea+'</p>'+
-                                          '<p>设施栽培面积（亩）：'+data.Response[i].F_FacilitiesArea+'</p>'+
-                                          '<p>露天栽培面积（亩）：'+data.Response[i].F_OpencastArea+'</p>'+
-                                      '</div>'+
-                                    '</div>'+
-                                  '</label>'+
-                                '</li>');
-                }
-            }
-            else{
-                ele.append('<li>无项目</li>');
-            }
-        },
-        error:function(error){
-            alert(error);
-            ele.append('<li>无项目</li>');
-        }
-    })
 }
 
 $(function(){

@@ -26,14 +26,9 @@ hr {
 	border-top: 1px dashed #2d2f34;
 	border-bottom: 1px dashed #474954;
 }
-
-.timeLine .main {
-	background: url("../img/log/line-bg.png") repeat-y 17px 0;
-}
 .timeLine .main .title {
 	line-height: 40px;
 	font-size: .9rem;
-	background: url("../img/log/clock.png") no-repeat 8px top;
 }
 .timeLine .main .title a{
 	color:#0894ec;
@@ -55,6 +50,12 @@ hr {
 }
 .timeLine .main .year .list ul {
 	bottom: 0;
+	background: url(../img/log/line-bg.png) repeat-y 17px 0;
+	margin-top: 30px;
+}
+.timeLine .main .year .list ul li:first-child{
+	padding-top:0px;
+	background: url(../img/log/circle.png) no-repeat 2px -8px;
 }
 .timeLine .main .year .list ul li {
 	background: url("../img/log/circle.png") no-repeat 2px 31px;
@@ -150,4 +151,27 @@ hr {
 }
 .content-block {
     padding: 0 .35rem;
+}
+.searchbar .search-input{
+	border: 1px solid #b4b4b4;
+    background: white;
+    border-radius: 1rem;
+}
+.searchbar .search-input input{
+	width: 54%;
+    display: inline;
+    border-radius: 0;
+    border: 0;
+    height: 1.6rem;
+    margin-left: 1rem;
+}
+.searchBtn{
+    border: 0;
+    border-left: 1px #cdcdcd solid;
+    font-size: .8rem;
+    color: #1abb9c;
+    padding-left: .3rem;
+    float: right;
+    margin-top: .2rem;
+    margin-right: .3rem;
 }
