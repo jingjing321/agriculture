@@ -18,6 +18,47 @@
 
   </head>
   <body>
+      <div id="login" class="page page-current">
+        <header class="bar bar-nav">
+          <h1 class="title">登录</h1>
+        </header>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content-block">
+          <div class="login-block">
+            <div class="list-block">
+              <ul>
+                <!-- Text inputs -->
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">用户名</div>
+                      <div class="item-input">
+                        <input type="text" id="userName" placeholder="用户名">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="item-content">
+                    <div class="item-inner">
+                      <div class="item-title label">密码</div>
+                      <div class="item-input">
+                        <input type="password" id="userPassword" placeholder="密码">
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="content-block">
+              <div class="row">
+                <div class="col-100"><a href="#" class="button" onclick="login()">提交</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 	    <div class="page page-current" id="index">
         <header class="bar bar-nav">
           <a class="icon icon-menu pull-left open-panel"></a>
@@ -30,12 +71,8 @@
             <div class="searchbar row">
               <div class="search-input col-100 ">
                 <input type="search" id='searchIndex' placeholder='请输入追溯号'/>
-                <!-- <button  onclick="searchIndex()"><span class="fa fa-search"></span></button>
-                <button><span class="fa fa-qrcode"></button> -->
-                <a id="qrscan" style="border: 0;border-left: 1px #cdcdcd solid;font-size: .8rem;color: #1abb9c;padding-left: .3rem;float: right;margin-top: .2rem;margin-right: .3rem;" >扫一扫</a>
-                <a onclick="searchIndex()" style="border: 0;border-left: 1px #cdcdcd solid;font-size: .8rem;color: #1abb9c;padding-left: .3rem;float: right;margin-top: .2rem;margin-right: .3rem;" >搜索</a>
-                <!-- <a href="#" class="button active"><span class="fa fa-search" onclick="searchIndex()"></span></a>
-                <a href="#" class="button active open-popup" data-popup=".popup-services"><span class="fa fa-qrcode"></span></a> -->
+                <a id="qrscan" style="border: 0;border: 0;font-size: 1rem;color: #727272;padding-left: .6rem;padding-right:.8rem;float: right;margin-top: .1rem;margin-right: .3rem;" ><span class="fa fa-qrcode"></span></a>
+                <a onclick="searchIndex()" style="border: 0;font-size: 1rem;color: #727272;padding-left: .6rem;float: right;margin-top: .1rem;margin-right: .3rem;" ><span class="fa fa-search"></span></a>
               </div>
             </div>
             <!-- <p style="font-size: .6rem;color: #c0c0c1;">比如输入<a>茯茶</a>的追溯号，会出现如下茯茶的追溯信息，如下文。</p> -->
@@ -59,7 +96,6 @@
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -79,9 +115,9 @@
           <div class="content-block">
             <div class="searchbar row">
               <div class="search-input col-100">
-                <input type="search" id='search' placeholder='请输入项目名称'/>
-                <a style="border: 0;border-left: 1px #cdcdcd solid;font-size: .8rem;color: #1abb9c;padding-left: .3rem;float: right;margin-top: .2rem;margin-right: .3rem;" >扫一扫</a>
-                <a style="border: 0;border-left: 1px #cdcdcd solid;font-size: .8rem;color: #1abb9c;padding-left: .3rem;float: right;margin-top: .2rem;margin-right: .3rem;" >搜索</a>
+                <input type="search" id='searchIndex' placeholder='请输入追溯号'/>
+                <a style="border: 0;border: 0;font-size: 1rem;color: #727272;padding-left: .6rem;padding-right:.8rem;float: right;margin-top: .1rem;margin-right: .3rem;" ><span class="fa fa-qrcode"></span></a>
+                <a style="border: 0;font-size: 1rem;color: #727272;padding-left: .6rem;float: right;margin-top: .1rem;margin-right: .3rem;" ><span class="fa fa-search"></span></a>
               </div>
             </div>
             <div class="list-block media-list">
@@ -381,10 +417,10 @@
       <div class="panel panel-left panel-reveal" id="panel-left">
         <div class="list-block">
           <ul>
-            <li><a href="#index" class="item-link list-button">溯源查询</a></li>
-            <li><a href="#item_list" class="item-link list-button">项目列表</a></li>
-            <li><a href="#operation_process" class="item-link list-button">操作过程</a></li>
-            <li><a href="#operation_field" class="item-link list-button">操作字段</a></li>
+            <li><a href="#index" class="item-link list-button close-panel">溯源查询</a></li>
+            <li><a href="#item_list" class="item-link list-button close-panel">项目列表</a></li>
+            <li><a href="#operation_process" class="item-link list-button close-panel">操作过程</a></li>
+            <li><a href="#operation_field" class="item-link list-button close-panel">操作字段</a></li>
           </ul>
         </div>
       </div>

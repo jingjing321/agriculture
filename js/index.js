@@ -84,7 +84,15 @@ function searchIndex(number){
                                                 }
                                                 else if(data.Response[i_detail].F_Type=="B"){
                                                     var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value+'</p>';
-                                                    eleHtml+='<p>&nbsp;（商品名称：复合肥料，品牌：六国之星，厂家：六国之星厂）</p>';
+                                                    $.ajax({
+                                                        type:"get",
+                                                        url:baseUrl+'api/Origin/GetCodeDetail?code='+data.Response[i_detail].F_Value,
+                                                        dataType:'json',
+                                                        async:false,
+                                                        success:function(data){
+                                                            eleHtml+='<p>&nbsp;（商品名称：'+data.Response.F_GoodsName+'，品牌：'+data.Response.F_Trademark+'，厂家：'+data.Response.F_ManuName+'）</p>';
+                                                        }
+                                                    })
                                                 }
                                                 else{
                                                     var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value+'</p>';
@@ -141,6 +149,7 @@ function getProgramList(){
         url: baseUrl+'api/Origin/GetProgramList',
         dataType: 'json',
         success:function(data){
+            alert(data.msg);
             if(data.Response.length>0){
                 for(var i=0;i<data.Response.length;i++){
                     ele.append('<li>'+
@@ -169,8 +178,27 @@ function getProgramList(){
             }
         },
         error:function(error){
-            alert(error);
+            alert("error:"+error.msg);
             ele.append('<li>无项目</li>');
+        }
+    })
+}
+
+/*
+*登录
+*/
+function login(){
+    $.ajax({
+        type: "post",
+        url: baseUrl+'api/Account/Login?username='+$("#login #username").val()+'&password='+$("#login #password").val()+'&url='+window.location.href,
+        data:{username:$("#login #username").val(),password:$("#login #password").val(),url:window.location.href},
+        dataType: 'json',
+        success:function(data){
+            alert('success:'+data);
+            console.log(data);
+        },
+        error:function(error){
+            alert("error"+error);
         }
     })
 }

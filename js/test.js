@@ -1,40 +1,5 @@
 var baseUrl="http://a18099.sanlogic.cn/";
 var picUrl="http://a18090.sanlogic.cn/";
-$('#operation_process_table').bootstrapTable({
-    striped:true,
-    classes:"table table-no-bordered",
-    data: [{1:"栽培",2:"1",3:"1",4:"false",5:"2018-3-2",6:"false",7:"1111"}],
-    columns: [
-        {field: '1',title: '名称',align:"center"}, 
-        {field: '2',title: '编号',align:"center"}, 
-        // {field: '3',title: '排序',align:"center"},
-        // {field: '4',title: '默认',align:"center"},
-        // {field: '5',title: '创建时间',align:"center"}, 
-        {field: '6',title: '有效',align:"center"},
-        {field: '7',title: '备注',align:"center"},
-    ],
-    onClickRow:function(row,ele,field){
-        console.log(row);
-    }
-});
-$('#operation_field_table').bootstrapTable({
-    striped:true,
-    classes:"table table-no-bordered",
-    data: [{1:"content",2:"1",3:"1",4:"false",5:"2018-3-2",6:"false",7:"1111"}],
-    columns: [
-        {field: '1',title: '字段名称',align:"center"}, 
-        {field: '2',title: '字段类型',align:"center"}, 
-        // {field: '3',title: '编码',align:"center"},
-        // {field: '4',title: '排序',align:"center"},
-        // {field: '5',title: '创建时间',align:"center"}, 
-        {field: '6',title: '有效',align:"center"},
-        {field: '7',title: '备注',align:"center"},
-    ],
-    onClickRow:function(row,ele,field){
-        console.log(row);
-    }
-});
-
 /*
 *首页 search
 *number 追溯号（可选）
@@ -80,10 +45,25 @@ function searchIndex(number){
                                         if(data.Response!=null){
                                             for(var i_detail=0;i_detail<data.Response.length;i_detail++){
                                                 if(data.Response[i_detail].F_Type=="P"){
-                                                    var eleHtml='<p><span>'+data.Response[i_detail].F_Name+'：</span><a data-picUrl="'+data.Response[i_detail].F_Value+'" onclick="viewImg(this)">查看附件</a>'
+                                                    var eleHtml='<p><span>'+data.Response[i_detail].F_Name+'：</span>'+(data.Response[i_detail].F_Value?'<a data-picUrl="'+data.Response[i_detail].F_Value+'" onclick="viewImg(this)">查看附件</a>':"无");
+                                                }
+                                                else if(data.Response[i_detail].F_Type=="B"){
+                                                    var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+(data.Response[i_detail].F_Value?data.Response[i_detail].F_Value:"")+'</p>';
+                                                    if(data.Response[i_detail].F_Value){
+                                                        $.ajax({
+                                                            type:"get",
+                                                            url:baseUrl+'api/Origin/GetCodeDetail?code='+data.Response[i_detail].F_Value,
+                                                            dataType:'json',
+                                                            async:false,
+                                                            success:function(data){
+                                                                eleHtml+='<p>&nbsp;（商品名称：'+(data.Response.F_GoodsName?data.Response.F_GoodsName:"")+'，品牌：'+(data.Response.F_Trademark?data.Response.F_Trademark:"")+'，厂家：'+(data.Response.F_ManuName?data.Response.F_ManuName:"")+'）</p>';
+                                                            }
+                                                        })
+                                                    }
+                                                    
                                                 }
                                                 else{
-                                                    var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value+'</p>';
+                                                    var eleHtml='<p>'+data.Response[i_detail].F_Name+'：'+data.Response[i_detail].F_Value?data.Response[i_detail].F_Value:""+'</p>';
                                                 }
                                                 ele.find("ul li").last().find(".more").append(eleHtml);
                                             }
